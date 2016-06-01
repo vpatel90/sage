@@ -7,9 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav>
+  <div class="nav-wrapper container">
+    <a href="#" class="brand-logo">Sage</a>
+    <ul id="nav-mobile" class="right">
+      <% if user_signed_in? %>
+      <li> <%= current_user.email %> </li>
+      <li><%= link_to "Logout", destroy_user_session_path, method:'DELETE' %></li>
+      <% else %>
+      <li><%= link_to "Sign Up", user_registration_path %></li>
+      <li><%= link_to "Login", new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+<div class="container">
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 <%= yield %>
+</div>
 
 </body>
 </html>
