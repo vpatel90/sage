@@ -6,10 +6,10 @@ var SampleBoxItemSearch = React.createClass ({
       selectedItems: []
     };
   },
-  addSelectedItems: function(item){
+  addSelectedItems: function(itemId){
     var that = this;
     var sis = this.state.selectedItems;
-    sis.push(item);
+    sis.push(itemId);
     this.setState({
       selectedItems: sis
     })
@@ -34,6 +34,7 @@ var SampleBoxItemSearch = React.createClass ({
         {this.state.items.map(function(item){
           return (
             <DropDownItems key={item.id}
+                           itemId={item.id}
                            name={item.name}
                            selectedItems={that.state.selectedItems}
                            addSelectedItems={that.addSelectedItems}/>
