@@ -23,12 +23,20 @@
     </div>
   </div>
   <div class="col m5">
+    <div class="row">
     <%= fields_for :sample_box_item do |ff| %>
       <div class="field">
         <%= ff.label "Search Item" %>
         <%= react_component('SampleBoxItemSearch') %>
       </div>
     <% end %>
+    </div>
+    <div class="row">
+      <h5> Items in Box </h5>
+      <div id="itemsInBox">
+
+      </div>
+    </div>
   </div>
 </div>
 <% end %>

@@ -66,5 +66,5 @@ end
 gem 'react-rails'
 gem 'annotate'
 gem 'rails-erd'
-
+gem 'underscore-rails'
 gem 'devise'

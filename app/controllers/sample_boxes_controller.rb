@@ -8,11 +8,11 @@ class SampleBoxesController < ApplicationController
 
   def create
     @sample_box = SampleBox.new(sample_box_params)
-    # if @sample_box.save
-      # redirect_to root_path
-    # else
+    if @sample_box.save
+      redirect_to root_path
+    else
       render new
-    # end
+    end
   end
 
   def update
