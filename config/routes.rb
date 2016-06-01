@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+  resource :sample_box do
+    collection do
+      get '/search_items', to: 'sample_boxes#search_items'
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

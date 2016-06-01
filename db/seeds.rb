@@ -9,5 +9,8 @@
 User.create(name:"Admin", email:"admin@example.com", password:"password", admin: true)
 50.times do
   price = '%.2f' % rand(1.00 .. 99.99)
-  Item.create(name: Faker::Commerce.product_name, price: price.to_f, pic: Faker::Placeholdit.image)
+  Item.create(name: Faker::Commerce.product_name,
+              brand: Faker::Company.name,
+              price: price.to_f,
+              pic: Faker::Placeholdit.image)
 end
