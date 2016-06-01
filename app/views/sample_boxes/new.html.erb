@@ -1,6 +1,6 @@
 <%= form_for @sample_box, url: sample_box_path  do |f| %>
 <div class="row">
-  <div class="col m7">
+  <div class="col m6">
     <div class="field">
       <%= f.label :name %><br />
       <%= f.text_field :name, autofocus: true %>
@@ -22,7 +22,7 @@
       <%= f.submit %>
     </div>
   </div>
-  <div class="col m5">
+  <div class="col m5 offset-m1">
     <div class="row">
     <%= fields_for :sample_box_item do |ff| %>
       <div class="field">
