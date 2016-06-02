@@ -5,7 +5,8 @@ var DropDownItems = React.createClass({
       Materialize.toast("Item already on list", 2000)
     }else {
       this.props.addSelectedItems(this.props.itemId);
-      itemBox.innerHTML = itemBox.innerHTML + '<p>' + this.props.name + '</p>';
+      itemBox.innerHTML = itemBox.innerHTML + "<input type='hidden' name='sample_box[item_id][]' value='"+ this.props.itemId + "'/>"+
+                          '<p>' + this.props.name + '</p>';
     }
   },
   render: function(){
