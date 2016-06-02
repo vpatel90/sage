@@ -1,4 +1,25 @@
-<h1>Welcome to Sage</h1>
+<h3>Welcome to Sage</h3>
+<div>
 <% if current_user && current_user.admin %>
   <%= render "admin" %>
 <% end %>
+</div>
+
+<div class="row">
+  <main class="banner-box">
+    <h4 class="center"><%= @latest_box.name %></h4>
+    <%= image_tag "stuff.jpg", class:"banner-box-image" %>
+    <div class="row">
+    <div class="col m6">
+      <h2 class="box-price"><%= @latest_box.price %></h2>
+    </div>
+    <div class="col m6">
+      <h6>Items Included</h6>
+      <% @box_items.each do |item| %>
+      <p><%= item.name %> | <%= item.price %></p>
+      <% end %>
+    </div>
+    </div>
+  </main>
+
+</div>

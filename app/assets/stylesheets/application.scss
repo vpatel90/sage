@@ -16,3 +16,15 @@
 @import "materialize/components/color";
 $primary-color: #81c784 !default;
 @import "materialize";
+
+.banner-box-image {
+  width: 80%;
+  margin: 0 10%;
+}
+
+.banner-box {
+  position: relative;
+  .box-price {
+    margin-left: 10%;
+  }
+}
