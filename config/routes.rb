@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+  get 'items/show'
+
+  get 'items/new'
+
+  get 'items/edit'
+
   devise_for :users
+  resource :items
+
   resource :sample_box do
     collection do
       get '/search_items', to: 'sample_boxes#search_items'

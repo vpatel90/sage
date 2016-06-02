@@ -12,7 +12,7 @@ class SampleBoxesController < ApplicationController
       create_sample_box_items
       redirect_to root_path
     else
-      render new
+      render :new
     end
   end
 
