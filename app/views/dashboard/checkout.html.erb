@@ -1,0 +1,8 @@
+<% @cart.sample_boxes.each do |box| %>
+<p>Sample Box: <%= box.name %> | <%= box.price %></p>
+<% end %>
+<% @cart.items.each do |item| %>
+<p>Item: <%= item.name %> | <%= item.price %></p>
+
+<p> Total: <%= @cart.total_sum %> </p>
+<% end %>

@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  get 'items/show'
 
-  get 'items/new'
-
-  get 'items/edit'
+  get '/checkout', to: 'dashboard#checkout'
 
   devise_for :users
   resource :items
