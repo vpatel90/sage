@@ -17,6 +17,12 @@
 $primary-color: #81c784 !default;
 @import "materialize";
 
+
+
+
+.btn {
+  background-color: $primary-color;
+}
 .banner-box-image {
   width: 100%;
 }

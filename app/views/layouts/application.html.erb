@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Sage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -27,13 +28,21 @@
     </ul>
   </div>
 </nav>
-<div class="container">
+<div class="main-container container">
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <p class="alert"><%= flash[:error] %></p>
 
 <%= yield %>
 </div>
+
+<footer class="page-footer">
+  <div class="footer-copyright">
+              <div class="container">
+              © 2016 Copyright
+              </div>
+            </div>
+</footer>
 
 </body>
 </html>
