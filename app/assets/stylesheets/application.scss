@@ -18,13 +18,20 @@ $primary-color: #81c784 !default;
 @import "materialize";
 
 .banner-box-image {
-  width: 80%;
-  margin: 0 10%;
+  width: 100%;
 }
 
 .banner-box {
   position: relative;
   .box-price {
-    margin-left: 10%;
+    @extend .center;
   }
+}
+
+.box-item-list {
+    @extend .center;
+
+}
+.border-left {
+  border-left: solid 1px #777;
 }
