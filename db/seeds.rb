@@ -14,3 +14,5 @@ User.create(name:"Admin", email:"admin@example.com", password:"password", admin:
               price: price.to_f,
               pic: Faker::Placeholdit.image)
 end
+SampleBox.create(name:'first', price: 99.99)
+Cart.create(user_id: 1)

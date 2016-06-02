@@ -16,6 +16,16 @@ ActiveRecord::Schema.define(version: 20160601175918) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "cart_items", force: :cascade do |t|
+    t.integer  "cart_id"
+    t.integer  "cart_itemable_id"
+    t.string   "cart_itemable_type"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "cart_items", ["cart_id"], name: "index_cart_items_on_cart_id", using: :btree
+
   create_table "carts", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "created_at", null: false
@@ -24,18 +34,9 @@ ActiveRecord::Schema.define(version: 20160601175918) do
 
   add_index "carts", ["user_id"], name: "index_carts_on_user_id", using: :btree
 
-  create_table "item_carts", force: :cascade do |t|
-    t.integer  "cart_id"
-    t.integer  "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "item_carts", ["cart_id"], name: "index_item_carts_on_cart_id", using: :btree
-  add_index "item_carts", ["item_id"], name: "index_item_carts_on_item_id", using: :btree
-
   create_table "items", force: :cascade do |t|
     t.string   "name"
+    t.string   "brand"
     t.text     "description"
     t.string   "pic"
     t.decimal  "price"
@@ -83,9 +84,8 @@ ActiveRecord::Schema.define(version: 20160601175918) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "cart_items", "carts"
   add_foreign_key "carts", "users"
-  add_foreign_key "item_carts", "carts"
-  add_foreign_key "item_carts", "items"
   add_foreign_key "sample_box_items", "items"
   add_foreign_key "sample_box_items", "sample_boxes"
 end
