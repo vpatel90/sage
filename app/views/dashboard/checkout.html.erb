@@ -1,36 +1,39 @@
 <div class='container'>
+<% if @cart %>
+  <% @cart.sample_boxes.each do |box| %>
+  <div class='row'>
+    <div class='col s8 m8 l8'>
+      Sample Box: <%= box.name %>
+    </div>
+    <div class='col s4 m4 l4'>
+      $<%= box.price %>
+    </div>
+  </div>
+  <% end %>
+  <% @cart.items.each do |item| %>
+    <div class='row'>
 
-<% @cart.sample_boxes.each do |box| %>
-<div class='row'>
-  <div class='col s8 m8 l8'>
-    Sample Box: <%= box.name %>
-  </div>
-  <div class='col s4 m4 l4'>
-    $<%= box.price %>
-  </div>
-</div>
-<% end %>
-<% @cart.items.each do |item| %>
+      <div class='col s8 m8 l8'>
+        Item: <%= item.name %>
+      </div>
+      <div class='col s4 m4 l4'>
+        $<%= item.price %></p>
+      </div>
+    </div>
+
+  <% end %>
+  <hr />
   <div class='row'>
 
     <div class='col s8 m8 l8'>
-      Item: <%= item.name %>
+      Total
     </div>
     <div class='col s4 m4 l4'>
-      $<%= item.price %></p>
-    </div>
-  </div>
-
-<% end %>
-<hr />
-<div class='row'>
-
-  <div class='col s8 m8 l8'>
-    Total
-  </div>
-  <div class='col s4 m4 l4'>
-     $<%= @cart.total_sum %>
+       $<%= @cart.total_sum %>
+     </div>
    </div>
- </div>
+<% else %>
+  <h5 class="center"> Your cart is empty</h5>
+<% end %>
 
 </div>
