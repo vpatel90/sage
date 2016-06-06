@@ -18,4 +18,17 @@
 //= require react
 //= require react_ujs
 //= require components
+
+
+var ready = function() {
+  if($('body').height() >= window.innerHeight){
+    $('footer').removeClass('fixed');
+  }
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
+
+
 //= require_tree .

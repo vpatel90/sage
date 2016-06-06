@@ -19,7 +19,9 @@ $primary-color: #81c784 !default;
 
 
 
-
+html, body {
+  height: 100%;
+}
 .btn {
   background-color: $primary-color;
 }
@@ -40,4 +42,18 @@ $primary-color: #81c784 !default;
 }
 .border-left {
   border-left: solid 1px #777;
+}
+
+.page-container{
+  min-height: 100%;
+  margin-bottom: -99px;
+}
+
+.page-container:after {
+  content: "";
+  display: block;
+}
+
+.page-footer, .page-container:after {
+  height: 79px;
 }

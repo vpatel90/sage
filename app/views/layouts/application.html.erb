@@ -9,6 +9,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="page-container">
 <nav>
   <div class="nav-wrapper container">
     <a href="/" class="brand-logo left">Sage</a>
@@ -34,6 +35,7 @@
   <p class="alert"><%= flash[:error] %></p>
 
 <%= yield %>
+</div>
 </div>
 
 <footer class="page-footer">
