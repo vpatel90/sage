@@ -22,7 +22,10 @@
       <li><%= link_to "Login", new_user_session_path %></li>
       <% end %>
       <li class="cart-icon"><%= link_to checkout_path do%>
-          <i class="material-icons">shopping_cart</i><span class="cart-items-indicator badge">2</span>
+          <i class="material-icons">shopping_cart</i>
+            <% if current_user %>
+            <span class="cart-items-indicator badge"><%= current_user.cart_items_count %></span>
+            <% end %>
           <% end %>
       </li>
 

@@ -7,4 +7,12 @@ class User < ActiveRecord::Base
   validates :name, presence: true
 
   has_many :carts
+
+  def cart_items_count
+    if carts.last
+      carts.last.total_items
+    else
+      ""
+    end
+  end
 end

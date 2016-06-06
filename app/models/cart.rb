@@ -10,4 +10,8 @@ class Cart < ActiveRecord::Base
     sum_boxes + sum_items
   end
 
+  def total_items
+    cart_items.count
+  end
+
 end
