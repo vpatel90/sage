@@ -21,8 +21,8 @@
       <li><%= link_to "Sign Up", new_user_registration_path %></li>
       <li><%= link_to "Login", new_user_session_path %></li>
       <% end %>
-      <li><%= link_to checkout_path do%>
-          <i class="material-icons">shopping_cart</i>
+      <li class="cart-icon"><%= link_to checkout_path do%>
+          <i class="material-icons">shopping_cart</i><span class="cart-items-indicator badge">2</span>
           <% end %>
       </li>
 
