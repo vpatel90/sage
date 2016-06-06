@@ -12,4 +12,8 @@ class DashboardController < ApplicationController
       redirect_to new_user_session_path
     end
   end
+
+  def add_to_cart
+    binding.pry
+  end
 end

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get '/checkout', to: 'dashboard#checkout'
+  post '/add_to_cart', to: 'dashboard#add_to_cart'
 
   devise_for :users
   resource :items
