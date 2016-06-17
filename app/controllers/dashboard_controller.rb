@@ -14,6 +14,21 @@ class DashboardController < ApplicationController
   end
 
   def add_to_cart
-    binding.pry
+    if confirm_item_type
+      cart_item = current_user.carts.last.cart_items.create(get_cart_item)
+      render json: cart_item
+    else
+      render json: { message: "Invalid Request" }
+    end
+  end
+
+  private
+
+  def get_cart_item
+    { cart_itemable_type: params[:cart_itemable_type], cart_itemable_id: params[:cart_itemable_id] }
+  end
+
+  def confirm_item_type
+    params[:cart_itemable_type].constantize.find(params[:cart_itemable_id])
   end
 end
